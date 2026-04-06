@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body {
+    margin:0;
+    font-family:'Segoe UI';
+    display:flex;
+    background:#0f172a;
+    color:white;
+}
+
+/* sidebar */
+.sidebar {
+    width:230px;
+    background:#020617;
+    padding:20px;
+}
+.sidebar a {
+    display:block;
+    padding:12px;
+    color:#94a3b8;
+    text-decoration:none;
+}
+.sidebar a:hover {
+    background:#1e293b;
+    color:white;
+}
+
+/* main */
+.main {flex:1;}
+
+.topbar {
+    padding:15px;
+    background:#020617;
+}
+
+.content {
+    padding:20px;
+}
+
+/* cards */
+.cards {
+    display:flex;
+    gap:15px;
+}
+.card {
+    flex:1;
+    padding:20px;
+    border-radius:15px;
+    background: linear-gradient(145deg,#1e293b,#0f172a);
+    box-shadow:0 0 20px rgba(0,255,255,0.2);
+    text-align:center;
+    transition:0.3s;
+}
+.card:hover {
+    transform:scale(1.05);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>👟 Wash Shoes</h2>
+<a href="dashboard.html">Dashboard</a>
+<a href="pelanggan.html">Pelanggan</a>
+<a href="transaksi.html">Transaksi</a>
+</div>
+
+<div class="main">
+
+<div class="topbar">Dashboard Premium</div>
+
+<div class="content">
+
+<div class="cards">
+<div class="card">👤<br>150</div>
+<div class="card">👟<br>90</div>
+<div class="card">⏳<br>12</div>
+<div class="card">✅<br>200</div>
+</div>
+
+<br><br>
+
+<canvas id="chart"></canvas>
+
+</div>
+
+</div>
+
+<script>
+new Chart(document.getElementById("chart"), {
+type: 'bar',
+data: {
+labels: ['Jan','Feb','Mar','Apr'],
+datasets: [{
+label: 'Transaksi',
+data: [10,20,30,40]
+}]
+}
+});
+</script>
+
+</body>
+</html>
